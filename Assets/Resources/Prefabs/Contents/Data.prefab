@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6023461763394223461
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7190105059978826978}
+  - component: {fileID: 7181988029298551946}
+  m_Layer: 0
+  m_Name: Data
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7190105059978826978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6023461763394223461}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.600365, y: 21.592865, z: 139.00246}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7181988029298551946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6023461763394223461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 039c1fccc09913b4cad48b2d584569a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allContents:
+  - {fileID: 1377488253180131530, guid: 6a043ee18a3bcd64e9fd7b6d2feb9c04, type: 3}
+  - {fileID: 1377488253180131530, guid: f1ae61c3298185c47bfe12b06f5493a5, type: 3}
+  - {fileID: 1377488253180131530, guid: 66779f9985dddff4889c9ebcac0b2802, type: 3}
+  - {fileID: 1377488253180131530, guid: e1e31d8df936e64419d60864b8bc0568, type: 3}
+  - {fileID: 1377488253180131530, guid: 91f101764b12c214ba50b7000789849a, type: 3}
+  - {fileID: 1377488253180131530, guid: c98c3bda44a39ba4a90858e335e7eddf, type: 3}
+  - {fileID: 1377488253180131530, guid: 9c6804ed40c00e44691f898dd0e55101, type: 3}
+  - {fileID: 1377488253180131530, guid: a8dfcb6098b82c14693b1179824df8f2, type: 3}
+  - {fileID: 1377488253180131530, guid: f49937fe163096d4b9254abea3115c6e, type: 3}
+  - {fileID: 1377488253180131530, guid: 85e78c357db5d664c9fd8123f71f7684, type: 3}
+  - {fileID: 1377488253180131530, guid: efd43b08ae3fb6047b6a6c0b951abe31, type: 3}
+  - {fileID: 1377488253180131530, guid: ee3edd95603303045b18e70c26a2b61c, type: 3}
+  - {fileID: 1377488253180131530, guid: bf0ee0c6a391379429e9e75a0c5a3c54, type: 3}
+  - {fileID: 1377488253180131530, guid: 2df0cd08a4108c24cbb9b00afb00fefe, type: 3}
+  - {fileID: 1377488253180131530, guid: c5d2c91ed038da041adfc5bc25b1b400, type: 3}
+  - {fileID: 1377488253180131530, guid: dc8b3fa3f5581454a9be0b7278d75031, type: 3}
+  - {fileID: 1377488253180131530, guid: 0960c8dacccad3d43b693fded3d83539, type: 3}
+  gameName: []
+  con_tag: []
