@@ -8,11 +8,15 @@
   </p>
 </div>
 
-[![나작유 포트폴리오 표지, 1/18](docs/portfolio/page-01.jpg)](docs/portfolio/page-01.jpg)
+<p align="center">
+  <img src="docs/portfolio/title-screen.jpg" alt="나작유 타이틀 화면" width="180">
+  <img src="docs/portfolio/daily-action-menu.jpg" alt="하루 행동 선택 화면" width="180">
+  <img src="docs/portfolio/broadcast-rating.jpg" alt="방송 영상 별점 결과 화면" width="180">
+</p>
 
-## 프로젝트 한눈에 보기
+## 프로젝트 개요
 
-방송으로 영상을 만들고 편집·업로드로 수익과 구독자를 늘려갑니다. 하루를 행동 단위로 운영하며 D+365의 구독자 수에 따라 엔딩이 결정됩니다.
+방송으로 영상을 만들고, 편집·업로드로 수익과 구독자를 늘려가는 유튜버 육성 시뮬레이션입니다. 하루를 행동 단위로 운영하며 D+365의 구독자 수에 따라 엔딩이 결정됩니다.
 
 | 항목 | 내용 |
 |---|---|
@@ -21,7 +25,7 @@
 | 엔진 / 언어 | Unity 2020.3 / C# |
 | 담당 | 게임 시스템 · UI 프레임워크 |
 
-## 담당 역할과 주요 기여
+## 담당 역할과 기여
 
 공통 시스템과 UI 기반을 설계하고, 방송·영상 파트의 팀원 시스템이 연결되도록 데이터 흐름과 인터페이스를 구현했습니다.
 
@@ -31,48 +35,53 @@
 | 직접 작성한 스크립트 | 116개 |
 | 팀원 담당 코드 통합·수정 | 41개 파일 |
 
-- **상점 프레임워크:** 콘텐츠·가구·편집자 고용·FLEX 상점을 `BaseUI`와 목록·정렬 팩토리로 통합했습니다.
-- **행동 상태머신:** 휴식·수면·방송·편집·미용·운동을 상태로 분리하고 날짜·소모품·주급·엔딩은 `GlobalState`로 관리했습니다.
-- **UI 기반:** `PopupBuilder`로 공용 팝업을 만들고 Observer 갱신으로 HUD와 목록이 데이터 변경을 반영하도록 구성했습니다.
-- **데이터와 시스템 연결:** 프리팹 기획 데이터와 CSV 진행 데이터를 나누고, 영상 편집·콘텐츠 인기도를 팀원 시스템과 연동했습니다.
+### 확장 가능한 상점 프레임워크
 
-## 포트폴리오 페이지 · 18쪽
+콘텐츠, 가구, 편집자 고용, FLEX 네 상점을 공통 `BaseUI`와 목록·정렬 팩토리로 묶었습니다. enum/switch 분기를 컴포넌트 조립 방식으로 바꿔 새 상점을 추가할 때 기존 상점 코드를 덜 건드리게 했습니다.
 
-PDF 페이지를 이미지로 포함했습니다. GitHub에서 아래로 스크롤해 그대로 읽고, 이미지를 클릭하면 큰 크기로 볼 수 있습니다.
+| 콘텐츠 | 가구 | 편집자 고용 | FLEX |
+|---|---|---|---|
+| ![콘텐츠 상점](docs/portfolio/shop-content.jpg) | ![가구 상점](docs/portfolio/shop-furniture.jpg) | ![편집자 고용 상점](docs/portfolio/shop-editor-hire.jpg) | ![FLEX 상점](docs/portfolio/shop-flex.jpg) |
 
-[![02 · 목차](docs/portfolio/page-02.jpg)](docs/portfolio/page-02.jpg)
+**팩토리 구조 변경**
 
-[![03 · 프로젝트 개요](docs/portfolio/page-03.jpg)](docs/portfolio/page-03.jpg)
+![상점 팩토리 변경 전](docs/portfolio/shop-factory-before.png)
 
-[![04 · 기여 근거](docs/portfolio/page-04.jpg)](docs/portfolio/page-04.jpg)
+![상점 팩토리 변경 후](docs/portfolio/shop-factory-after.png)
 
-[![05 · 담당 구조](docs/portfolio/page-05.jpg)](docs/portfolio/page-05.jpg)
+### 행동 상태머신
 
-[![06 · 상점 프레임워크](docs/portfolio/page-06.jpg)](docs/portfolio/page-06.jpg)
+휴식·수면·방송·편집·미용·운동을 `IState` 구현으로 분리했습니다. 매일 처리되는 날짜, D-day, 소모품, 주급, 엔딩은 항상 동작하는 `GlobalState`가 담당합니다.
 
-[![07 · 팩토리 구조 개선](docs/portfolio/page-07.jpg)](docs/portfolio/page-07.jpg)
+![플레이어 행동 상태머신](docs/portfolio/player-state-machine.png)
 
-[![08 · 상점 구성](docs/portfolio/page-08.jpg)](docs/portfolio/page-08.jpg)
+### UI와 데이터 흐름
 
-[![09 · 행동 상태머신](docs/portfolio/page-09.jpg)](docs/portfolio/page-09.jpg)
+`PopupBuilder` 하나로 구매·잔액 부족·편집 완료 등의 팝업을 생성하고, Observer 갱신으로 데이터 변경이 HUD와 상점 목록에 전달되도록 했습니다.
 
-[![10 · 상태 설계 판단](docs/portfolio/page-10.jpg)](docs/portfolio/page-10.jpg)
+| 잔액 부족 팝업 | 편집 완료 팝업 |
+|---|---|
+| ![잔액 부족](docs/portfolio/popup-low-balance.jpg) | ![편집 완료](docs/portfolio/popup-edit-complete.jpg) |
 
-[![11 · 매니저 설계](docs/portfolio/page-11.jpg)](docs/portfolio/page-11.jpg)
+기획 값은 프리팹에 두고, 플레이 진행은 CSV에 저장했습니다. 아래는 프리팹에서 가구 효과 데이터를 편집하는 예입니다.
 
-[![12 · 데이터와 저장](docs/portfolio/page-12.jpg)](docs/portfolio/page-12.jpg)
+![가구 프리팹 데이터](docs/portfolio/furniture-prefab-data.png)
 
-[![13 · PopupBuilder](docs/portfolio/page-13.jpg)](docs/portfolio/page-13.jpg)
+![Observer 기반 데이터 갱신 흐름](docs/portfolio/observer-data-flow.png)
 
-[![14 · Observer 갱신](docs/portfolio/page-14.jpg)](docs/portfolio/page-14.jpg)
+### 팀 시스템 연동
 
-[![15 · 팀 시스템 연동](docs/portfolio/page-15.jpg)](docs/portfolio/page-15.jpg)
+플레이어도 편집자로 영상 편집 파이프라인에 참여하도록 연결했습니다. 뉴스의 유행 태그가 바뀌면 콘텐츠 인기도를 재계산해 시청자와 수익 시스템에 전달합니다.
 
-[![16 · 씬, 사운드, 입력](docs/portfolio/page-16.jpg)](docs/portfolio/page-16.jpg)
+| 플레이어 영상 편집 | 트렌드 뉴스와 콘텐츠 |
+|---|---|
+| ![플레이어 영상 편집](docs/portfolio/video-edit-integration.jpg) | ![트렌드 뉴스](docs/portfolio/trending-content-integration.jpg) |
 
-[![17 · 설계 회고](docs/portfolio/page-17.jpg)](docs/portfolio/page-17.jpg)
+## 추가 구현과 회고
 
-[![18 · 마무리](docs/portfolio/page-18.jpg)](docs/portfolio/page-18.jpg)
+- DOTween 페이드와 비동기 씬 전환, BGM/SE 분리와 볼륨 저장, 한글 닉네임 검증, 세로 화면 해상도 대응을 구현했습니다.
+- 현재 다시 설계한다면 문자열 상태 이름과 `GameObject.Find` 대신 enum과 캐시를 쓰고, 상태 전환 규칙을 `StateMachine` 한 곳에서 검사하겠습니다.
+- `GlobalState`와 `DatabaseManager`에 모인 책임은 날짜 변경 이벤트와 데이터 기능별로 나누겠습니다.
 
 ## 실행
 
